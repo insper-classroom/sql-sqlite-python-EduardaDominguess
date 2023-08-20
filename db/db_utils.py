@@ -8,16 +8,16 @@ def create_table(con, create_table_sql):
     cursor.execute(create_table_sql)
     con.commit()
 
-def insert_student(conn, estudantes):
-    cursor = conn.cursor()
+def insert_student(con, estudantes):
+    cursor = con.cursor()
     cursor.executemany("""
     INSERT INTO Estudantes (Nome, Curso, Ano_de_Ingresso)
     VALUES (?, ?, ?);
     """, estudantes)
-    conn.commit()
+    con.commit()
 
-def show_all_students(conn):
-    cursor = conn.cursor()
+def show_all_students(con):
+    cursor = con.cursor()
     cursor.execute("SELECT * FROM Estudantes")
     return cursor.fetchall()
 

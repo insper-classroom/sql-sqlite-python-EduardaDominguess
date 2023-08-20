@@ -24,12 +24,10 @@ estudantes = [
 
 db_utils.insert_student(con, estudantes)
 
-print('------------------------------')
-print('All students')
+print('\nAll students')
 print(db_utils.show_all_students(con))
 
-print('------------------------------')
-print('Students by between years')
+print('\nStudents by between years')
 print(db_utils.select_students_by_year(con, 2019, 2020))
 
 # UPDATE Estudantes SET Ano_de_Ingresso = 2020 WHERE ID = 2
@@ -38,8 +36,7 @@ db_utils.update_student(con, 2020, 2)
 #DELETE FROM Estudantes WHERE ID = 4
 db_utils.delete_student(con, 4)
 
-print('------------------------------')
-print('All students')
+print('\nAll students')
 print(db_utils.show_all_students(con))
 
 db_utils.close_connection(con)
