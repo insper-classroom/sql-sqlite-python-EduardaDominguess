@@ -4,7 +4,7 @@ from db import db_utils
 con = db_utils.connect_to_db('db/database_alunos2.db')
 db_utils.drop_table(con, 'Estudantes')
 
-create_table_query = '''
+create_table = '''
 CREATE TABLE IF NOT EXISTS Estudantes (
     ID INTEGER PRIMARY KEY,
     Nome TEXT,
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS Estudantes (
     Ano_de_Ingresso INTEGER
 )'''
 
-db_utils.create_table(con, create_table_query)
+db_utils.create_table(con, create_table)
 
 estudantes = [
     ('Ana Silva', 'Computação', 2019),
